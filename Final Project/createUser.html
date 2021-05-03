@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>New User?</h1>
+        <div class= "noAccountContainer">
+            <form action = "createUser.php" method = "post">
+                Username: <input type = "text" placeholder = "Username" name = "uName"></input><br>
+                Password: <input type = "text" placeholder = "Password" name = "pwd1"></input><br>
+                Confirm Password: <input type = "text" placeholder = "Confirm" name = "pwd2"></input><br>
+                <button id= "Validate" onclick= "validate()">Create User</button><br>
+                <script type= "text/javascript" src= "validatePass.js"></script></form>
+                <br>Already have an account? <button id="signinPage" onclick = "">Sign in</button>
+        </div>
+    </body>
+</html>
