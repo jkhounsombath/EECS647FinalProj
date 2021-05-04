@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Revolutionized LEDs</h1>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  </head>
+  
+  <body>
+
+    <h1 align="center">Revolutionized LEDs</h1>
+    <div class="main">
         <!-- Login action when submitted-->
         <form action="login.php" method="post">
             <!-- Container holding login fields-->
-            <div class= "loginFieldsContainer">
-                <label for= "username"> USERNAME </label>
-                <input type= "text" placeholder = "UserName" name = "username">
+            <div class = "loginFieldsContainer">
+                <label class = "un" for= "username"> USERNAME </label>
+                <input type= "text"  name = "username">
                 <br>
-                <label for= "password"> PASSWORD </label>
-                <input type = "password" placeholder = "Password" name = "password">
+                <label class = "pw" for= "password"> PASSWORD </label>
+                <input type = "password"  name = "password">
                 <br>
-                <button type= "submit"> Submit </button>
+                <button class = "submit" type= "submit"> Submit </button>
             </div>
         </form>
-    </body>
+
+    </div>
+
+       
+  </body>
+
+
 </html>
+
+
