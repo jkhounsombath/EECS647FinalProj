@@ -3,29 +3,43 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.main {
+.loginMain {
     background-color: #FFFFFF;
     width: 400px;
-    height: 200px;
+    height: 250px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+
+.registerMain {
+    background-color: #FFFFFF;
+    width: 600px;
+    height: 600px;
     margin: 7em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .loginFieldsContainer{
-    padding-top: 40px;
+    padding-top: 50px;
     
 }
-.un {
+
+
+.noAccountContainer{
+    padding-top: 50px;
+    
+}
+.loginText {
     width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 1px;
     padding: 10px 20px;
-    
     outline: none;
-    
     margin-bottom: 50px;
     margin-left: 46px;
     text-align: center;
@@ -35,44 +49,40 @@ body {
 }
 
 
-.pw {
-    width: 76%;
-    color: rgb(38, 50, 56);
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    
-    padding: 10px 20px;
-    
-    outline: none;
 
-    margin-bottom: 50px;
-    margin-left: 46px;
-    text-align: center;
-    margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
 
-}
-
-.submit {
+.buttons button {
     cursor: pointer;
         border-radius: 5em;
         color: #fff;
         background: linear-gradient(to right, #1638a7, #4d55c7);
         border: 0;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        margin-top: 50px;
-        margin-left: 35%;
+        padding: 10px 34px;
+        display: inline-block;
+        top: 50px;
+        margin-left: 60px;
+        margin-top: 30px;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-  }
+}
+
+
+.submit {
+    border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #1638a7, #4d55c7);
+        border: 0;
+        padding: 10px 34px;
+        display: inline-block;
+        top: 50px;
+        margin-left: 150px;
+        margin-top: 30px;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
 
 @media (max-width: 600px) {
     .main {
         border-radius: 0px;
     }
-
-
