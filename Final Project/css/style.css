@@ -51,7 +51,7 @@ body {
 
 
 
-.buttons button {
+.loginButtons button {
     cursor: pointer;
         border-radius: 5em;
         color: #fff;
@@ -60,13 +60,26 @@ body {
         padding: 10px 34px;
         display: inline-block;
         top: 50px;
-        margin-left: 60px;
+        margin-left: 67px;
         margin-top: 30px;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
-
+.regButtons button {
+    cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #1638a7, #4d55c7);
+        border: 0;
+        padding: 10px 34px;
+        display: inline-block;
+        top: 50px;
+        margin-left: 50px;
+        margin-top: 30px;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
 .submit {
     border-radius: 5em;
         color: #fff;
