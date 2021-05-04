@@ -10,21 +10,29 @@
   <body>
 
     <h1 align="center">Revolutionized LEDs</h1>
-    <div class="main">
-        <!-- Login action when submitted-->
+    <div class="loginMain">
+       
         <form action="login.php" method="post">
-            <!-- Container holding login fields-->
+
             <div class = "loginFieldsContainer">
-                <label class = "un" for= "username"> USERNAME </label>
+                <label class = "loginText" for= "username"> USERNAME </label>
                 <input type= "text"  name = "username">
                 <br>
-                <label class = "pw" for= "password"> PASSWORD </label>
+                <label class = "loginText" for= "password"> PASSWORD </label>
                 <input type = "password"  name = "password">
                 <br>
-                <button class = "submit" type= "submit"> Submit </button>
+                <div class = "loginButtons">
+                    <button type= "submit"> Login </button>
+                </div>
             </div>
         </form>
-
+                <div class = "loginButtons">
+                    <button onclick="window.location.href='createUser.html'"> Register </button>
+                </div>
+                
+            
+        
+        
     </div>
 
        
