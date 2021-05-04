@@ -5,7 +5,6 @@ function myFunc() {
   var code1="#" + text1.value.toString(2) + text2.value.toString(2) + text3.value.toString(2);
 
 
-    alert("Color Code: " + code1 + ".");
     document.getElementsByTagName('h2')[0].style.backgroundColor = code1;
     document.getElementsByTagName('h2')[0].style.color = code1;
 
