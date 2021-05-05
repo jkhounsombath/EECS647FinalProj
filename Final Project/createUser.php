@@ -2,7 +2,8 @@
 $userName = $_POST["uName"];
 $pwd = $_POST["pwd1"];
 $email = $_POST["uemail"];
-$mysqli = new mysqli("mysql.eecs.ku.edu", "jkhounsombath", "ieng9eiF", "jkhounsombath");
+$id = mt_rand(100000, 999999);
+$mysqli = new mysqli("sql102.epizy.com", "epiz_28547065", "J4zeP5TfSqnDVe", "epiz_28547065_revLEDS");
 if ($mysqli->connect_errno)
 {
   printf("Connect failed: %s\n", $mysqli->connect_error);
@@ -13,9 +14,11 @@ $worked = true;
 if ($worked == true)
 {
   $query = "INSERT INTO USER 
-            (UPASSWORD, UNAME, EMAIL)
+            (ID, UNAME, UPASSWORD, EMAIL)
             VALUES
-            ('$pwd', '$userName', '$email')";
+            ('$id', '$userName', '$pwd', '$email')";
+
+  header("Location: userPortal.html");
 }
 $mysqli->close();
 ?>
