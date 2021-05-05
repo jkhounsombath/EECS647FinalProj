@@ -1,7 +1,7 @@
 <?php
 $userName = $_POST["uName"];
 $pwd = $_POST["pwd1"];
-$email = $_POST["email"];
+$email = $_POST["uemail"];
 $mysqli = new mysqli("mysql.eecs.ku.edu", "jkhounsombath", "ieng9eiF", "jkhounsombath");
 if ($mysqli->connect_errno)
 {
