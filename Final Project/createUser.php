@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             ('$pwd', '$userName', '$email')");
 
   $insertQuery = $query->execute();
-
+  mysqli_close($db);
 }
 ?>
 
