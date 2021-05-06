@@ -24,36 +24,66 @@
             }
       
         .jumbotron {
-    background-color: rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
         }
+
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: #151B8D;
+            font-family: monospace;
+            font-size: 25px;
+            text-align: left;
+            }
+            th {
+            background-color: #151B8D;
+            color: white;
+            }
+            tr:nth-child(even) {background-color: #f2f2f2
+        }
+
+
+
     </style>
   </head>
 
-  <body data-spy="scroll" data-target="#navbar-example">
+  <body>
 
     <nav id="topNav" class="navbar navbar-full navbar-static-top navbar-dark bg-inverse">
         <div class="container">
             <a class="navbar-brand" href="#">Revolutionized LEDS</a>
         </div>
     </nav>
+     
+    <table>
+    <tr>
+    <th>Config Name</th>
+    <th>Rating</th>
+    <th>Downloads</th>
+    </tr>
 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <?php echo "<h1 class= 'display-3'> Welcome " .$userName. "</h2>"; ?>
-      </div>
-    </div>
+    <?php
+    $mysqli = new mysqli("mysql.eecs.ku.edu", "jkhounsombath", "ieng9eiF", "jkhounsombath");
 
-    <div class = regButtons>
-        <button onclick="window.location.href='ColorPreview/colorPreview.php'">Color Test</button>
-    </div>
+    $query = "SELECT CONFIG_NAME, RATING, DOWNLOADS FROM LED_CONFIG
+              ORDER BY DOWNLOADS DESC";    
+    $result = $mysqli-> query($query);
+
+    if($result->num_rows > 0){
+      
+      while($row = $result->fetch_assoc()) {
+      echo "<tr><td>" . $row["CONFIG_NAME"]. "</td><td>" . $row["RATING"] . "</td><td>"
+      . $row["DOWNLOADS"]. "</td></tr>";
+      }
+      echo "</table>";
+      } else { echo "0 results"; }
+      $conn->close();    
     
-    <div class = regButtons>
-        <button onclick="window.location.href='viewDownloads.php'">View most downloaded colors</button>
-    </div>   
-        
-    <div class = regButtons>
-        <button onclick="window.location.href='viewRating.php'">View top rated colors</button>
-    </div>       
+    ?>
+
+    
+    
         
 
   </body>
