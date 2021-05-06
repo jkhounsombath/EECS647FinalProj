@@ -1,38 +1,28 @@
 <?php
-
-$userName = $_POST["uName"];
-$pwd = $_POST["pwd1"];
-$email = $_POST["uemail"];
-$mysqli = new mysqli("mysql.eecs.ku.edu", "jkhounsombath", "ieng9eiF", "jkhounsombath");
-
-echo $userName;
+require_once "config.php";
+require_once "session.php";
 
 
-if ($mysqli === false)
-{
-  printf("Connect failed: %s\n", $mysqli->connect_error);
-  exit();
-}
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
+  $userName = $_POST["uName"];
+  $pwd = $_POST["pwd1"];
+  $email = $_POST["uemail"];
 
-$query = "INSERT INTO USER 
-          (UPASSWORD, UNAME, EMAIL)
-          VALUES
-          ('$pwd', '$userName', '$email')";
 
-  if ($mysqli->query($query) === TRUE) {
-      echo "New record created successfully";
-      header("Location: userPortal.php");
+  $query = $db->prepare(
+            "INSERT INTO USER 
+            (UPASSWORD, UNAME, EMAIL)
+            VALUES
+            ('$pwd', '$userName', '$email')");
+
+  $insertQuery = $query->execute();
+  if($inserQuery) {
+    echo "worked";
   } else {
-      echo "Error";
+    echo "did not work";
+  }
+
 }
-//header("Location: userPortal.html");
-echo "TEST";
-
-  
-
-
-
-$mysqli->close();
 ?>
 
 <!DOCTYPE html>
@@ -48,15 +38,16 @@ $mysqli->close();
         <h1 align="center">Revolutionized LEDs</h1>
         <div class="registerMain">
             <div class= "noAccountContainer">
-                <form action = "createUser.php" method = "post">
-                    <input class =loginText type = "text" placeholder = "Username" name = "uName"></input><br>
-                    <input class =loginText type = "text" placeholder = "Password" name = "pwd1"></input><br>
+                <form action = "" method = "post">
+                    <input class =loginText type = "text" placeholder = "Username" name = "uName" required></input><br>
+                    <input class =loginText type = "text" placeholder = "Password" name = "pwd1" required></input><br>
                     <input class =loginText type = "text" placeholder = "E-mail Address" name = "email"></input><br>
                     <div class = regButtons>
-                        <button id= "Validate">Create User</button><br>
+                        <input type = 'submit' name='submit' id= "Validate">Create User</button><br>
                     </div>
                 </form>
                     <div class = regButtons>
+                        <p>Already have account?</p>
                         <button onclick="window.location.href='login.php'">Sign In</button>
                     </div>
             </div>

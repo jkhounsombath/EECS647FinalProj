@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+
+if(!isset($_SESSION["userid"]) || $_SESSION["userid"] !== true){
+  header("location: login.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
   <head>
 
@@ -48,10 +59,16 @@
     </div>
     
     <div class = regButtons>
-        <button onclick="window.location.href='ColorPreview/colorPreview.php'">View top colors</button>
+        <button onclick="window.location.href='viewDownloads.php'">View most downloaded colors</button>
     </div>   
         
-
+    <div class = regButtons>
+        <button onclick="window.location.href='viewRating.php'">View top rated colors</button>
+    </div>        
+        
+    <div class = regButtons>
+        <button onclick="window.location.href='logout.php'">Log out</button>
+    </div>    
         
 
   </body>

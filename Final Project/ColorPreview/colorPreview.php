@@ -9,7 +9,7 @@
 <script type="text/javascript" src="ex.js"> </script>
 </head>
 <body>
-  <button style="margin-right:600px;" onclick="window.location.href='../userPortal.html'">RETURN TO USER PORTAL</button>
+  <button style="margin-right:600px;" onclick="window.location.href='../userPortal.php'">RETURN TO USER PORTAL</button>
 </BR><h1>LED COLOR TEST</h1>
 </body>
 Enter each color value below, each in 00-FF form. </BR> Click the TEST button to preview your choice.</BR></BR>
