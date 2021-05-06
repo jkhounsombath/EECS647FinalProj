@@ -16,13 +16,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             ('$pwd', '$userName', '$email')");
 
   $insertQuery = $query->execute();
-  if($inserQuery) {
+  if($insertQuery) {
     echo "worked";
   } else {
     echo "did not work";
   }
 
+
 }
+$query->close();
+mysqli_close($db);
+
 ?>
 
 <!DOCTYPE html>
@@ -43,11 +47,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                     <input class =loginText type = "text" placeholder = "Password" name = "pwd1" required></input><br>
                     <input class =loginText type = "text" placeholder = "E-mail Address" name = "email"></input><br>
                     <div class = regButtons>
-                        <input type = 'submit' name='submit' id= "Validate">Create User</button><br>
+                        <button type = 'submit' name='submit' id= "Validate">Create User</button><br>
                     </div>
                 </form>
                     <div class = regButtons>
-                        <p>Already have account?</p>
                         <button onclick="window.location.href='login.php'">Sign In</button>
                     </div>
             </div>
