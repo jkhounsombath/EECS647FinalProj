@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $userName = trim($_POST['username']);
     $pwd = trim($_POST['password']);
 
-    if ($stmt = $db->prepare("SELECT UNAME, UPASSWORD FROM USER WHERE UNAME = '$userName'")) {
+    if ($stmt = $db->prepare("SELECT ID, UNAME, UPASSWORD FROM USER WHERE UNAME = '$userName'")) {
         // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
         $stmt->bind_param('s', $_POST[$userName]);
         $stmt->execute();
@@ -26,21 +26,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 
         if ($stmt->num_rows > 0) {
 
-            $row = $stmt->get_result();
-            $row->fetch();
-            if ($_POST['password'] === $pwd) {
-                
-                session_regenerate_id();
+            $stmt->bind_result($uid, $un, $pw);
+            $stmt->fetch();
+            echo $pwd;
+            echo $pw;
+            echo $uid;
+            if ($pwd === $pw) {
+                $_SESSION["userid"] = $uid;
                 $_SESSION['loggedin'] = TRUE;
-                echo "YES";
-                
+                header("Location: userPortal.php");
+                exit;
             } else {
                 // Incorrect password
-                echo 'Incorrect username and/or password!';
+                echo 'incorrect pass';
             }
         } else {
             // Incorrect username
-            echo 'Incorrect username and/or password!';
+            echo 'incorrect user';
         }
 
         $stmt->close();
