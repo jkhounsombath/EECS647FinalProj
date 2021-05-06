@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
   <head>
 
 
@@ -40,17 +39,16 @@
 
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-3">Welcome!</h1>
-        <p>Insert text.</p>
+        <?php echo "<h1 class= 'display-3'> Welcome " .$userName. "</h2>"; ?>
       </div>
     </div>
 
     <div class = regButtons>
-        <button onclick="window.location.href='ColorPreview/index.html'">Color Test</button>
+        <button onclick="window.location.href='ColorPreview/colorPreview.php'">Color Test</button>
     </div>
     
     <div class = regButtons>
-        <button onclick="window.location.href='ColorPreview/index.html'">View top colors</button>
+        <button onclick="window.location.href='ColorPreview/colorPreview.php'">View top colors</button>
     </div>   
         
 
